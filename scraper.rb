@@ -18,7 +18,7 @@ def municipality
   # Remove: Electo/Electa/Elegido por el / Municipio: / Nivel[...]
   m = m.gsub(/[Mm]unicipio:/, '')
   m = m.gsub(/[Ee]le.+?por el/, '')
-  m = m.gsub(/Nivel.+?\./, '')
+  m = m.gsub(/Nivel [Ee]scolar.+?\./, '')
   m = m.delete('.')
   m.strip
 end
