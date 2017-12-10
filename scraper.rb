@@ -23,8 +23,8 @@ def scrape
   end
 end
 
-def paragraph(p)
-  el = @page.at("//*/div[#{@div_y}]/div[#{@div_x}]/div/div/div[2]/div/p[#{p}]")
+def paragraph(num)
+  el = @page.at("//*/div[#{@div_y}]/div[#{@div_x}]/div/div/div[2]/div/p[#{num}]")
   !el.nil? ? el.text.strip : ''
 end
 
