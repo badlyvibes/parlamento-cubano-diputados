@@ -39,7 +39,7 @@ def scrape
     o = occupation
     # Sometimes occupation details are in the municipality paragraph
     o = m['Ocupación:'] ? m.gsub(/.+?Ocupación:/, '').gsub(/\.$/, '') : o
-    m.gsub(/Ocupación.+?$/, '')
+    m = m.gsub(/Ocupación.+?$/, '')
 
     puts ScraperWiki.save_sqlite([:name], name: name, municipality: m, occupation: o, image: image)
 
