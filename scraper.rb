@@ -4,7 +4,7 @@ require 'mechanize'
 
 def paragraph(p)
   element = @page.at(
-    "//*[contains(@*,'post-')]/div/div[#{@div_y}]/div[#{@div_x}]/div/div/div[2]/div/p[#{p}]"
+    "//*/div[#{@div_y}]/div[#{@div_x}]/div/div/div[2]/div/p[#{p}]"
   )
   !element.nil? ? element.text.strip : ''
 end
@@ -29,7 +29,7 @@ end
 
 def image
   @page.at(
-    "//*[contains(@*,'post-')]/div/div[#{@div_y}]/div[#{@div_x}]/div/div/div[1]/figure/*/img"
+    "//*/div[#{@div_y}]/div[#{@div_x}]/div/div/div[1]/figure/*/img"
   ).attribute('src').value
 end
 
@@ -54,7 +54,7 @@ agent = Mechanize.new
 # There are 16 regions
 (1..16).each do |i|
   start_page = agent.get('http://www.parlamentocubano.cu/index.php/diputados/')
-  anchor = "//*[contains(@*,'post-')]/div/div[1]/div/div/div/div[6]/div/ul/li[#{i}]/a"
+  anchor = "//*/div[1]/div/div/div/div[6]/div/ul/li[#{i}]/a"
   # Region page
   @page = agent.get(start_page.at(anchor).attribute('href').value)
   @div_x = 1
