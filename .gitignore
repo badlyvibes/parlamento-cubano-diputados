@@ -1,2 +1,5 @@
 # Ignore output of scraper
+.idea/
 data.sqlite
+scraperwiki.sqlite
+
