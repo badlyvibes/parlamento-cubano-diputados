@@ -37,6 +37,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.1)
+    unicode_utils (1.4.0)
     webrobots (0.1.1)
 
 PLATFORMS
@@ -45,3 +46,10 @@ PLATFORMS
 DEPENDENCIES
   mechanize
   scraperwiki!
+  unicode_utils
+
+RUBY VERSION
+   ruby 2.3.1p112
+
+BUNDLED WITH
+   1.16.0
